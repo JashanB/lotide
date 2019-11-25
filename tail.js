@@ -8,9 +8,13 @@ const assertEqual = function(actual, expected) {
 const tail = function(words) {
   let clone = [...words]
   clone.shift();
-  console.log(clone);
-  return clone;
+  if (clone.length <2) {
+    return '[]'
+  } else {
+    return clone;
+}
+  return clone
 };
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
+const words = ["Yo Yo", 1, 2];
+console.log(tail(words)); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
