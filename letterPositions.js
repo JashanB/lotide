@@ -33,4 +33,4 @@ const assertArraysEqual = function(array1, array2) {
     console.log(`🛑🛑🛑Assertation Failed: ${array1} !== ${array2}`);
   }
 };
-assertArraysEqual(letterPositions('hello').e, [1])
+assertArraysEqual(letterPositions('hello').e, [1]);

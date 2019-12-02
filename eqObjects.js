@@ -1,11 +1,11 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertation Passed: ${actual} === ${expected}`);
   } else {
     console.log(`🛑🛑🛑Assertation Failed: ${actual} !== ${expected}`);
   }
 };
-const eqArrays = function(array1, array2) {
+const eqArrays = function (array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -17,7 +17,7 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }
@@ -26,8 +26,10 @@ const eqObjects = function(object1, object2) {
       if (eqArrays(object1[key], object2[key]) === false) {
         return false;
       }
+    // } else if (typeof object1[key] === 'object') {
+    //   eqArrays(object1[key], object2[key]);
     } else {
-      if (object1[key] !== object2[key]) { 
+      if (object1[key] !== object2[key]) {
         return false;
       }
     }
@@ -35,16 +37,21 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba) === true);  
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// console.log(eqObjects(ab, ba) === true);  
 
-const abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc) === false);
+// const abc = { a: "1", b: "2", c: "3" };
+// console.log(eqObjects(ab, abc) === false);
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-console.log(eqObjects(cd, dc) === true); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// console.log(eqObjects(cd, dc) === true); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log(eqObjects(cd, cd2) === false); 
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// console.log(eqObjects(cd, cd2) === false); 
+
+const cd3 = { c: "1", d: { e: "2"} };
+const dc3 = { c: "1", d: { e: "3"} };
+// const dc3 = { d: { e: "2", f: 3}, c: "1" };
+console.log(eqObjects(cd3, dc3) === true); // => true

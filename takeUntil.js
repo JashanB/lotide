@@ -19,6 +19,7 @@ console.log(results2);
 
 const data3 = [1, 2, 3, 4, 5, 6];
 const results3 = takeUntil(data3, x => x > 4);
+
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
