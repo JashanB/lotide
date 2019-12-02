@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertation Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑Assertation Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 const countLetters = function(input) {
   let newArr = input.split('');
   let newObj = {};
@@ -19,5 +13,6 @@ const countLetters = function(input) {
     }
   }
   return newObj;
-}
+};
+module.exports = countLetters;
 console.log(countLetters('based butter'))
