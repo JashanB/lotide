@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@jashanb/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "lotide functions clone",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/JashanB/lotide.git"
   },
-  "author": "",
+  "author": "jashanb",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JashanB/lotide/issues"
